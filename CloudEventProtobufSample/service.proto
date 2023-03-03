@@ -1,0 +1,11 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "CloudEventProtobufSample";
+
+package CloudEventProtobufSample;
+import "google/protobuf/empty.proto";
+import "cloudevents.proto";
+
+service SampleAppGrpcService {
+  rpc SendEvents(stream io.cloudevents.v1.CloudEvent) returns (google.protobuf.Empty);
+}
